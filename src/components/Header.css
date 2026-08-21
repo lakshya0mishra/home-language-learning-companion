@@ -1,0 +1,117 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--max-width);
+  height: var(--header-height);
+  background: rgba(252, 249, 248, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border-light);
+  box-shadow: 0 4px 16px rgba(26, 115, 232, 0.02);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 var(--space-md);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex: 1;
+  min-width: 0;
+}
+
+.header-back-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.header-back-btn:hover {
+  background: rgba(26, 115, 232, 0.05);
+  transform: translateX(-2px);
+}
+
+.header-back-btn:active {
+  transform: translateX(-2px) scale(0.95);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.header-logo {
+  font-size: 1.5rem;
+}
+
+.header-app-name {
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+.header-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.header-avatar-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #3b82f6, var(--color-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  margin-left: 4px;
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.15);
+  transition: all var(--transition-base);
+}
+
+.header-avatar-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(26, 115, 232, 0.25);
+}
+
+.header-avatar-btn:active {
+  transform: scale(0.95);
+}
+
+.header-avatar-letter {
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}

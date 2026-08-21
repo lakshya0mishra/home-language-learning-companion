@@ -1,0 +1,295 @@
+.onboarding {
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+}
+
+/* Background decoration */
+.onboarding-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.onboarding-circle {
+  position: absolute;
+  border-radius: var(--radius-full);
+  opacity: 0.15;
+}
+
+.circle-1 {
+  width: 280px;
+  height: 280px;
+  background: var(--color-primary);
+  top: -60px;
+  right: -50px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 220px;
+  height: 220px;
+  background: var(--color-secondary);
+  bottom: 12%;
+  left: -60px;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+  width: 140px;
+  height: 140px;
+  background: var(--color-home);
+  bottom: -40px;
+  right: 15%;
+  animation: float 5s ease-in-out infinite 1s;
+}
+
+.onboarding-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Step animation */
+.onboarding-step {
+  animation: fadeIn 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Welcome screen */
+.onboarding-welcome {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: var(--space-xl);
+}
+
+.welcome-illustration {
+  margin-bottom: var(--space-xl);
+}
+
+.welcome-emoji-ring {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-emoji-main {
+  font-size: 4.5rem;
+  animation: float 3s ease-in-out infinite;
+  z-index: 2;
+}
+
+.welcome-emoji {
+  position: absolute;
+  font-size: 1.6rem;
+  z-index: 1;
+}
+
+.floating-1 { top: 0; right: 4px; animation: float 2.5s ease-in-out infinite 0.2s; }
+.floating-2 { top: 12px; left: -4px; animation: float 3s ease-in-out infinite 0.5s; }
+.floating-3 { bottom: 8px; left: 8px; animation: float 2.8s ease-in-out infinite 0.8s; }
+.floating-4 { bottom: -4px; right: 0; animation: float 3.2s ease-in-out infinite 1.0s; }
+
+.welcome-title {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+  font-family: var(--font-display);
+}
+
+.welcome-subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+  font-family: var(--font-display);
+}
+
+.welcome-tagline {
+  font-size: var(--font-size-lg);
+  color: var(--color-secondary-dark);
+  font-weight: 700;
+  margin-top: var(--space-lg);
+}
+
+.welcome-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+  max-width: 310px;
+  line-height: 1.6;
+}
+
+/* Step header */
+.step-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-top: var(--space-md);
+}
+
+.step-emoji {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: var(--space-sm);
+  animation: float 4s ease-in-out infinite;
+}
+
+.step-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  font-family: var(--font-display);
+}
+
+.step-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+/* Selection list */
+.selection-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: var(--space-md);
+}
+
+/* Grade grid */
+.grade-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  flex: 1;
+}
+
+.grade-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-lg) var(--space-md);
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: var(--shadow-sm);
+  max-height: 140px;
+}
+
+.grade-card:hover {
+  border-color: var(--color-primary-light);
+  background: var(--color-primary-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.grade-card:active {
+  transform: scale(0.95);
+}
+
+.grade-card.selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+  box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.12);
+}
+
+.grade-card-icon {
+  font-size: 2.2rem;
+}
+
+.grade-card-number {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  line-height: 1.1;
+}
+
+.grade-card-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+/* Tutorial */
+.tutorial-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-md);
+}
+
+.tutorial-icon-container {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.tutorial-icon {
+  font-size: 3rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.tutorial-slide-title {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-text);
+  font-family: var(--font-display);
+}
+
+.tutorial-slide-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+  line-height: 1.6;
+}
+
+/* Navigation */
+.onboarding-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) 0;
+  margin-top: auto;
+  z-index: 2;
+}
+
+.onboarding-nav .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Small screens grid adjustment */
+@media (max-width: 350px) {
+  .grade-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

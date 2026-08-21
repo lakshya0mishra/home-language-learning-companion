@@ -1,0 +1,108 @@
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border-light);
+  transition: all var(--transition-base);
+}
+
+.audio-player-school {
+  border-color: var(--color-school-border);
+  background: var(--color-school-light);
+}
+
+.audio-player-home {
+  border-color: var(--color-home-border);
+  background: var(--color-home-light);
+}
+
+.audio-play-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.audio-play-btn-school {
+  background: var(--color-school);
+}
+
+.audio-play-btn-school:hover {
+  background: var(--color-primary-dark);
+}
+
+.audio-play-btn-home {
+  background: var(--color-home);
+}
+
+.audio-play-btn-home:hover {
+  background: #4A7560;
+}
+
+.audio-play-btn.playing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.audio-play-btn:active {
+  transform: scale(0.92);
+}
+
+.audio-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.audio-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.audio-progress-track {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.audio-progress-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 300ms ease;
+}
+
+.audio-progress-bar-school {
+  background: var(--color-school);
+}
+
+.audio-progress-bar-home {
+  background: var(--color-home);
+}
+
+.audio-stop-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  background: rgba(0,0,0,0.05);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.audio-stop-btn:hover {
+  background: rgba(0,0,0,0.1);
+  color: var(--color-text);
+}
